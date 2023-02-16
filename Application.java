@@ -1,10 +1,19 @@
-import inheritance.Masina;
+import polymorphism.Animal;
+import polymorphism.Caine;
+import polymorphism.Pisica;
 
 public class Application {
 
     public static void main(String[] args) {
-        Masina masina = new Masina("Volkswagen Golf 7", "gray", 4);
-        masina.afiseazaDetaliiVehicul();
+        Animal animal = new Animal();
+        animal.emiteSunet();
+
+        Caine caine = new Caine();
+        caine.emiteSunet();
+
+        Pisica pisica = new Pisica();
+        pisica.emiteSunet();
+
     }
 }
 
