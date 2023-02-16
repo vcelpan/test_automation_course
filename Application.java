@@ -1,18 +1,14 @@
-import polymorphism.Animal;
-import polymorphism.Caine;
-import polymorphism.Pisica;
+import abstraction.Patrat;
+import abstraction.Triunghi;
 
 public class Application {
 
     public static void main(String[] args) {
-        Animal animal = new Animal();
-        animal.emiteSunet();
+        Patrat patrat = new Patrat(4f);
+        Triunghi triunghi = new Triunghi(4f, 3f);
 
-        Caine caine = new Caine();
-        caine.emiteSunet();
-
-        Pisica pisica = new Pisica();
-        pisica.emiteSunet();
+        patrat.calculArie();
+        triunghi.calculArie();
 
     }
 }
