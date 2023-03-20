@@ -33,11 +33,11 @@ public class ContulPersoanei {
         System.out.println("\n========== Extragere de bani ==========");
 
         try {
-            System.out.println("Client: " + this.getNumePersoana());
-            System.out.println("Soldul curent: " + this.getSumaCurenta());
+            System.out.println("Client: " + numePersoana);
+            System.out.println("Soldul curent: " + sumaCurenta);
             System.out.println("Extragere de bani: " + sumaDeExtras);
 
-            if (sumaDeExtras > this.getSumaCurenta()) {
+            if (sumaDeExtras > sumaCurenta) {
                 throw new IllegalArgumentException("Mijloace insuficiente in cont!!!");
             } else {
                 sumaCurenta -= sumaDeExtras;
@@ -60,19 +60,19 @@ public class ContulPersoanei {
         System.out.println("\n========== Transfer catre o persoana ==========");
 
         try {
-            System.out.println("Expeditor: " + this.getNumePersoana());
-            System.out.println("Soldul curent: " + this.getSumaCurenta());
+            System.out.println("Expeditor: " + numePersoana);
+            System.out.println("Soldul curent: " + sumaCurenta);
             System.out.println("Suma spre transfer: " + sumaTransferului);
 
             System.out.println("------");
-            System.out.println("Beneficiar: " + persoana.getNumePersoana());
-            System.out.println("Soldul curent: " + persoana.getSumaCurenta());
+            System.out.println("Beneficiar: " + persoana.numePersoana);
+            System.out.println("Soldul curent: " + persoana.sumaCurenta);
 
-            if (sumaTransferului > this.getSumaCurenta()) {
+            if (sumaTransferului > sumaCurenta) {
                 throw new IllegalArgumentException("Mijloace insuficiente in cont!!!");
             } else {
                 sumaCurenta -= sumaTransferului;
-                persoana.setSumaCurenta(persoana.getSumaCurenta() + sumaTransferului);
+                persoana.sumaCurenta += sumaTransferului;
                 System.out.println("Operatiune de transfer de bani cu succes.");
             }
         } catch (IllegalArgumentException e){
@@ -82,8 +82,8 @@ public class ContulPersoanei {
         } catch (Exception e) {
             System.out.println(e.toString());
         } finally {
-            System.out.println("Soldul curent expeditor: " + this.getSumaCurenta());
-            System.out.println("Soldul curent beneficiar: " + persoana.getSumaCurenta());
+            System.out.println("Soldul curent expeditor: " + sumaCurenta);
+            System.out.println("Soldul curent beneficiar: " + persoana.sumaCurenta);
         }
 
         System.out.println("========== Transfer catre o persoana ==========\n");
