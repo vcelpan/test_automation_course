@@ -32,8 +32,8 @@ public class Stoc {
 
     public void listaDeCartiInStoc(){
         System.out.println("Lista de carti in stoc:");
-        for (Carte carte : cartileDinStoc) {
-            System.out.println(carte.toString());
+        for (int i=0; i<cartileDinStoc.size(); i++) {
+            System.out.println(cartileDinStoc.get(i).toString());
         }
     }
 
