@@ -28,6 +28,7 @@ public class FileManager {
         try (FileWriter fileWriter = new FileWriter(caleaCatreFisier, true)) {
             fileWriter.append("\n");
             fileWriter.append(date);
+            fileWriter.close();
         } catch (IOException e) {
             System.out.println("An error occurred: " + e.getMessage());
         }
